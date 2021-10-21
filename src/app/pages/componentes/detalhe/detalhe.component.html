@@ -1,0 +1,38 @@
+<div fxLayoutAlign="space-evenly">
+  <div class="card">
+    <div class="card-body">
+      <div style="font-weight: bolder;">
+        {{veiculo.modelo}} - {{veiculo.marca.descricao}}
+      </div>
+      <div>
+        <img src="{{veiculo.imagem}}">
+      </div>
+    </div>
+  </div>
+  <div class="card card-container">
+    <div class="card-body">
+      <div>
+       Portas
+       <div class="info">{{veiculo.qtdPortas}}</div>
+      </div>
+      <div>
+       Ano de Fabricação
+       <div class="info">{{veiculo.anoFabricacao}}</div>
+      </div>
+      <div>
+        Quilometragem
+        <div class="info">{{veiculo.quilometragem}}</div>
+       </div>
+       <div>
+        Placa
+        <div class="info">{{veiculo.placa}}</div>
+       </div>
+       <div>
+        Cor
+        <div class="info">{{veiculo.cor}}</div>
+       </div>
+    </div>
+  </div>
+
+</div>
+

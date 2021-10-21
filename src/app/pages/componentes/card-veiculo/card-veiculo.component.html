@@ -1,0 +1,19 @@
+<app-buscar (emmitSearch)="getSearch($event)"></app-buscar>
+<br>
+<div fxLayout="row wrap" fxLayoutAlign="space-evenly">
+  <div class="card-container" *ngFor="let veiculo of veiculos">
+    <img src="{{ veiculo.imagem }}" />
+    <div>
+      <h5>{{ veiculo.modelo }}</h5>
+    </div>
+    <div>
+      <div class="infor">Ano Fabricação</div>
+      <div>{{ veiculo.anoFabricacao }}</div>
+      <div class="infor">Marca</div>
+      <div>{{ veiculo.marca.descricao }}</div>
+    </div>
+    <div class="botao">
+      <button (click)="navigateDetalhe(veiculo.id)" class="btn btn-primary">Resevar</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,90 @@
+<div class="container-cad">
+  <form #Form="ngForm">
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <label for="modelo" class="form-label">Modelo</label>
+          <input type="text" required [(ngModel)]="veiculo.modelo" name="modelo"  class="form-control" id="modelo"
+          oninput="this.value = this.value.toUpperCase()" #modelo="ngModel">
+          <div *ngIf="modelo.invalid && (modelo.dirty || modelo.touched)" class="alert alert-danger">
+            Modelo é obrigatório
+          </div>
+
+        </div>
+
+      </div>
+      <div class="col">
+        <div>
+          <label class="form-label">Marca</label>
+            <select [(ngModel)]="veiculo.marca.id" name="marca" class="form-select" required #marca="ngModel">
+              <option selected>Selecione a marca</option>
+              <option *ngFor="let marca of marcas" [value]="marca.id">{{marca.descricao}}</option>
+            </select>
+        </div>
+        <div *ngIf="marca.invalid && (marca.dirty || marca.touched)" class="alert alert-danger">
+          Marca é obrigatório
+        </div>
+      </div>
+    </div>
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <label for="ano" class="form-label">Ano Fabricação</label>
+          <input type="text" [(ngModel)]="veiculo.anoFabricacao" name="ano" class="form-control" id="ano">
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <label for="qtdPortas" class="form-label">QTD.Portas</label>
+          <input type="text" [(ngModel)]="veiculo.qtdPortas" name="qtdPortas" class="form-control" id="qtdPortas">
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col">
+        <div>
+          <label for="chassi" class="form-label">Chassi</label>
+          <input type="text" [(ngModel)]="veiculo.chassi" name="chassi" class="form-control" id="chassi">
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <label for="placa" class="form-label">Placa</label>
+          <input type="text" [(ngModel)]="veiculo.placa" name="placa" class="form-control" id="placa"
+          oninput="this.value = this.value.toUpperCase()">
+        </div>
+      </div>
+    </div>
+
+    <div class="row mb-4">
+      <div class="col">
+        <div>
+          <label for="km" class="form-label">Quilometragem</label>
+          <input type="text" [(ngModel)]="veiculo.quilometragem" name="quilometragem" class="form-control" id="km">
+        </div>
+      </div>
+      <div class="col">
+        <div>
+          <label for="cor" class="form-label">Cor</label>
+          <input type="text" [(ngModel)]="veiculo.cor" name="cor" class="form-control" id="cor"
+          oninput="this.value = this.value.toUpperCase()">
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <input name="imagem" type="file" id="file" required ngModel
+             (change)="handleFileInput($event)"/>
+             <img id="img" [src]="urlImg" style="width: 200px;height: 128px;" *ngIf="urlImg">
+    </div>
+
+<br>
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button [disabled]="!Form.valid" type="submit" class="btn btn-primary" (click)="salvar()">Salvar</button>
+      </div>
+    </div>
+  </form>
+</div>
+

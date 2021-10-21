@@ -1,0 +1,14 @@
+a {
+  color: white;
+  text-decoration: none;
+}
+
+
+.cor:hover {
+  background-color: rgb(156, 136, 136);
+  color: white;
+  &:active{
+    color: white;
+  }
+}
+

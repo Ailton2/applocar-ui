@@ -1,0 +1,23 @@
+form {
+  width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: rgb(78, 78, 70);
+  border-radius: 10px;
+  color: white;
+
+  input {
+    width: 95%;
+    background: none;
+    border: none;
+    font-size: 18px;
+    outline: none;
+    color: white;
+    &::placeholder{
+      color: white;
+    }
+
+  }
+}

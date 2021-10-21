@@ -1,0 +1,22 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e6c7c7;
+  background-color: rgb(122, 116, 116);
+  color: white;
+  border-radius: 10px;
+  height: 400px;
+  padding: 14px;
+  margin: 0 16px 36px 32px;
+  width: 415px;
+}
+
+img {
+  height: 300px;
+  width: 450px;
+}
+
+.info{
+  font-size: 18px;
+  font-weight: bolder;
+}
